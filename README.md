@@ -14,6 +14,7 @@ engine=create_engine("postgresql://{YOUR_DATABASE_USER}:{YOUR_DATABASE_PASSWORD}
     echo=True
 )
 ```
+* Insert wanted date from a csc file with pgadmin4
 
 ### Create a virtual environment
 This can be done with 
@@ -44,7 +45,7 @@ pip install -r requirements.txt
 
 ## Run the API
 ``` uvicorn main:app --reload ```  
-test the the url path with execute button
+test the url paths from swager ui pressing execute button and adding query parameter in the url if needed
 
 # go to the browser  
 
