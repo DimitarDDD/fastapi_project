@@ -70,8 +70,9 @@ env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Create the database
-``` python create_db.py ```
+## use alembic if needed 
+```  alembic init alembic ```
+``` alembic revision --autogenerate -m ```
 
 ## Run the API
 ``` uvicorn main:app --reload ```  
