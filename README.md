@@ -1,7 +1,39 @@
 # Build a REST API with FastAPI, PostgreSQL and SQLAlchemy
-FastAPI is a Python framework and set of tools that allow developers to invoke commonly used functions using a REST interface. 
+FastAPI is a Python framework and set of tools that allow developers to invoke commonly used functions using a REST interface.  
+This app has three endpoints giving the needed data 
+/customers/birthday
+Response:
+{
+"customers": [
+{
+"customer_id": 12345
+"customer_first_name": "Joe Doe"
+},
+]
+}
 
+Endpoint: /products/top-selling-products/{year}
+Response:
+{
+"products: [
+{
+"product_name: "Espresso Roast",
+"total_sales": 12345
+},
+]
+}
 
+Endpoint: /customers/last-order-per-customer
+Response:
+{
+"customers": [
+{
+"customer_id": 12345,
+"customer_email": "yyyyy@zzzzz.xx",
+"last_order_date": "2023-01-01"
+},
+]
+}
 
 ### Setting up the database
 
@@ -14,7 +46,7 @@ engine=create_engine("postgresql://{YOUR_DATABASE_USER}:{YOUR_DATABASE_PASSWORD}
     echo=True
 )
 ```
-* Insert wanted date from a csc file with pgadmin4
+* Insert wanted data from a csv file using with pgadmin4 insert/export functionality or with using a sql query
 
 ### Create a virtual environment
 This can be done with 
@@ -32,8 +64,6 @@ or
 env\Scripts\activate
 ```
 
-
-
 ### Install the requirements 
 
 ``` 
@@ -45,7 +75,7 @@ pip install -r requirements.txt
 
 ## Run the API
 ``` uvicorn main:app --reload ```  
-test the url paths from swager ui pressing execute button and adding query parameter in the url if needed
+test the url paths from swager ui pressing execute button and adding query parameter in the url if it is needed
 
 # go to the browser  
 
